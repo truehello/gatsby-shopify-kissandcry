@@ -7,7 +7,7 @@ import "../style.scss"
 import { StoreContext } from "../context/StoreContext"
 import logo from "../images/logo.svg"
 import Cart from "./Cart/Cart"
-import Loader from "./Loader"
+import Loader from "./loader"
 import Nav from "./Nav"
 
 const Header = ({ siteTitle }) => {
