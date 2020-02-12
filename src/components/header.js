@@ -11,7 +11,7 @@ import Loader from "./loader"
 import Nav from "./Nav"
 
 const Header = ({ siteTitle }) => {
-  const { isCartOpen, toggleCartOpen, checkout, isLoading } = useContext(
+  const { isCartOpen, toggleCartOpen, checkout } = useContext(
     StoreContext
   )
   const transitions = useTransition(isCartOpen, null, {

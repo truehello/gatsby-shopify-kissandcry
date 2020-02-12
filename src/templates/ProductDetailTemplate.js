@@ -17,9 +17,9 @@ const ProductDetailTemplate = ({ data }) => {
           <Image fluid={firstImage.localFile.childImageSharp.fluid} />
         </div>
         <div className="column">
-          <h1 className="title">{product.title}</h1>
-          <p className="subtitle is-4">${firstVariant.price}</p>
-          <p>{product.description}</p>
+          <h1 className="font-semibold text-2xl tracking-tight">{product.title}</h1>
+          <p className="font-medium text-3xl tracking-tighter">${firstVariant.price}</p>
+          <p className="tracking-tighter">{product.description}</p>
           <AddToCart variantId={firstVariant.shopifyId} />
         </div>
       </div>

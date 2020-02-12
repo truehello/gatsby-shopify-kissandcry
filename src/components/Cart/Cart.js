@@ -4,7 +4,6 @@ import { StoreContext } from "../../context/StoreContext"
 
 const Cart = ({ style }) => {
   const {
-    isCartOpen,
     checkout,
     toggleCartOpen,
     removeProductFromCart,
@@ -41,7 +40,7 @@ const Cart = ({ style }) => {
       >
         Close Cart
       </button>
-      <h3 className="title">Cart</h3>
+      <h3 className="text-4xl font-semibold tracking-tight">Your Cart</h3>
       {checkout.lineItems.length > 0 ? (
         <>
           {checkout.lineItems.map(item => (
@@ -60,12 +59,12 @@ const Cart = ({ style }) => {
                 <img src={item.variant.image.src} alt="" />
               </div>
               <div>
-                <h4 className="title is-4">{item.title}</h4>
-                <p className="subtitle is-5">${item.variant.price}</p>
-                <p className="subtitle is-5">Qty: {item.quantity}</p>
+                <h4 className="text-2xl tracking-tight">{item.title}</h4>
+                <p className="text-xl tracking-tight">${item.variant.price}</p>
+                <p className="text-xl tracking-tight">Qty: {item.quantity}</p>
                 <button
                   onClick={() => removeProductFromCart(item.id)}
-                  className="is-small button is-danger is-outlined"
+                  className="mt-2 bg-transparent hover:bg-red-700 text-red-700 text-xs hover:text-gray-200 py-1 px-2 border border-red-700 hover:border-gray-200 rounded"
                 >
                   Remove
                 </button>
@@ -85,7 +84,7 @@ const Cart = ({ style }) => {
                   onClick={() =>
                     removeCoupon(checkout.discountApplications[0].code)
                   }
-                  className="is-small button is-danger is-outlined"
+                  className="mt-2 bg-transparent hover:bg-red-700 text-red-700 text-xs hover:text-gray-200 py-1 px-2 border border-red-700 hover:border-gray-200 rounded"
                 >
                   Remove
                 </button>
@@ -109,7 +108,7 @@ const Cart = ({ style }) => {
                     type="text"
                   />
                 </div>
-                <button className="button">Add Coupon</button>
+                <button className="mt-2 bg-gray-900 hover:bg-transparent text-gray-200 font-semibold hover:text-gray-900 py-2 px-4 border border-gray-900 hover:border-gray-900 rounded">Add Coupon</button>
               </form>
             )}
           </div>
@@ -117,14 +116,14 @@ const Cart = ({ style }) => {
           <div>
             Total: <h5 className="title">${checkout.totalPrice}</h5>
           </div>
-          <div style={{ marginTop: "2rem" }}>
+         
             <a
               href={checkout.webUrl}
-              className="button is-fullwidth is-success"
+              className="flex w-full justify-center mt-4 bg-gray-900 hover:bg-transparent text-gray-200 font-semibold hover:text-gray-900 py-2 px-4 border border-gray-900 hover:border-gray-900 rounded"
             >
               Checkout Now
             </a>
-          </div>
+         
         </>
       ) : (
         <p>No items in cart</p>
