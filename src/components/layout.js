@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <main className="section" style={{ minHeight: "90vh" }}>
+        <main className="pt-32 px-4" style={{ minHeight: "90vh" }}>
           {children}
         </main>
         <footer

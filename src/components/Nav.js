@@ -5,7 +5,7 @@ const Nav = () => {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query allShopifyCollections {
-        allShopifyCollection {
+        allShopifyCollection(filter: {title: {in: ["T-Shirts", "Hoodies", "Hats", "Extras"]}}) {
           edges {
             node {
               title
@@ -18,11 +18,16 @@ const Nav = () => {
   )
 
   return (
-    <nav>
+    
+      <ul className="flex flex-wrap items-center justify-between items-center lg:flex-row">
       {allShopifyCollection.edges.map(edge => {
-        return <Link key={edge.node.handle} to={`/${edge.node.handle}`}>{edge.node.title}</Link>
+        return <li className="lg:mr-3"><Link 
+        className="inline-block no-underline hover:text-underline py-2 px-4"
+        key={edge.node.handle} 
+        to={`/${edge.node.handle}`}>{edge.node.title}</Link></li>
       })}
-    </nav>
+      </ul>
+    
   )
 }
 

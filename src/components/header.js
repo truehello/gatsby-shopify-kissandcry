@@ -24,15 +24,9 @@ const Header = ({ siteTitle }) => {
   }, 0)
   return (
     <>
-      <header
-        className="level is-mobile"
-        style={{
-          padding: "10px 5%",
-          background: "var(--black-40)",
-          boxShadow: "var(--elevation-2)",
-        }}
-      >
-        <div className="level-left">
+      <header className="fixed w-full z-10 top-0 shadow p-4">
+      <nav className="flex flex-wrap items-center justify-between items-center lg:flex-row">
+        <div>
           <Link to="/">
             <img
               style={{ height: 60, maxHeight: "none", marginBottom: 0 }}
@@ -41,8 +35,9 @@ const Header = ({ siteTitle }) => {
             />
            
           </Link>
-          <Nav />
+          
         </div>
+        <Nav />
         <div className="level-right">
           <div>
             <button
@@ -73,7 +68,7 @@ const Header = ({ siteTitle }) => {
                 </div>
               )}
               <FaShoppingCart
-                style={{ color: "white", height: 30, width: 30 }}
+                style={{ color: "black", height: 25, width: 25 }}
               />
             </button>
           </div>
@@ -81,6 +76,7 @@ const Header = ({ siteTitle }) => {
         {transitions.map(
           ({ item, key, props }) => item && <Cart key={key} style={props} />
         )}
+        </nav>
       </header>
       <Loader />
     </>

@@ -1,0 +1,200 @@
+@tailwind base;
+
+:root {
+  --primary-color: #F6AD55;
+  --secondary-color: #9C4221;
+  --font-color: #2D3748;
+  --font-color-secondary: #1A202C;
+  --bg-color: #F7FAFC;
+  --bg-color-secondary:#EDF2F7;
+ 
+}
+
+[data-theme="dark-mode"] {
+  
+  --primary-color:#F6E05E;
+  --secondary-color: #B7791F;
+  --font-color: #F7FAFC;
+  --font-color-secondary: #EDF2F7;
+  --bg-color: #1A202C;
+  --bg-color-secondary: #2D3748;
+ 
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=BioRhyme|Space+Mono&display=swap");
+
+body {
+    @apply leading-normal;
+    @apply tracking-normal;
+    @apply min-h-screen;
+    @apply flex;
+    @apply flex-col;
+}
+body{
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: "BioRhyme", serif;
+  transition: all 1.5s ease-in-out;
+  transition-property: background-color, color
+}
+
+h1{
+  @apply font-bold;
+  @apply break-normal;
+  @apply pt-6;
+  @apply pb-2;
+  @apply text-3xl;
+}
+h2{
+  @apply text-2xl;
+  @apply pt-4;
+  @apply pb-2;
+}
+h3{
+  @apply text-xl;
+  @apply pt-4;
+  @apply pb-2;
+}
+
+a{
+  @apply underline;
+  transition: color 1s ease-in-out;
+}
+a:hover{
+  @apply no-underline;
+  color: var(--secondary-color);
+}
+p{
+    @apply py-6;
+    @apply font-serif;
+    font-family: "Space Mono", monospace;
+}
+
+pre{
+    @apply rounded;
+    @apply font-mono;
+    @apply text-base;
+    @apply p-2;
+}
+
+pre{
+  background: var(--bg-color-secondary);
+  color: var(--font-color-secondary);
+  transition: all 1.5s ease-in-out;
+}
+code{
+    @apply break-words; 
+    @apply whitespace-pre-wrap;
+}
+
+tr{
+  @apply py-4;
+  @apply px-6;
+  @apply font-medium;
+  @apply border-b;
+  @apply border-gray-500;
+}
+
+table{
+  border: solid 1px #2D3748;
+}
+
+.card{
+  background: var(--bg-color-secondary);
+  transition: background 1.5s ease-in-out;
+}
+
+#gatsby-focus-wrapper {
+    @apply min-h-screen;
+    @apply flex;
+    @apply flex-col;
+}
+
+#nav-content{
+  background: var(--bg-color);
+  color: var(--font-color);
+  transition: all 1.5s ease-in-out;
+}
+
+
+
+.logo{
+  color: var(--secondary-color); 
+  transition: color 1.5s ease-in-out;
+}
+
+.btn {
+  @apply font-semibold;
+  @apply py-2;
+  @apply px-4;
+  @apply rounded;
+}
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--font-color);
+  transition: all 1.5s ease-in-out;
+  transition-property: background, color
+}
+.btn-primary:hover {
+  background: var(--secondary-color);
+
+}
+
+.moon,
+.sun {
+  width: 34px;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.sun:hover {
+  animation: sun_rotate 1s infinite;
+}
+.moon:hover {
+  transform: scale(1.1);
+}
+
+.particles {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height:100vh;
+}
+
+/* Animations */
+
+@keyframes sun_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.dark-mode-toggle button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dark-mode-toggle button:hover,
+.dark-mode-toggle button:focus,
+.dark-mode-toggle button:active {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+
+@tailwind components;
+
+@tailwind utilities;
